@@ -1,4 +1,4 @@
 # Fedora Cross Compile 
-fedora
+* Docker Image to easy crosscompile to windows and mac
 
 
