@@ -2,7 +2,7 @@
 * Docker Image to easy crosscompile to windows and mac
 
 
-## Example Use
+## Example Use for GTK3 C file 
 
 ## Run the docker and you will be logged into bash 
 ```
