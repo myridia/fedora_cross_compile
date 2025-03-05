@@ -59,7 +59,7 @@ RUN dnf install -y mingw64-glib2-static
 # Setup rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 RUN . ~/.cargo/env && \
-    rustup target add x86_64-pc-windows-gnu
+    rustup target add x86_64-pc-windows-gnu i686-pc-windows-gnu
 
 ADD cargo.config ~/.cargo/config
 
