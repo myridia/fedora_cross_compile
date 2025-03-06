@@ -9,7 +9,7 @@ MAINTAINER veto<veto@myridia.com>
 WORKDIR /root/
 RUN dnf -y update
 RUN dnf clean all
-RUN dnf install -y mingw64-gtk3 mingw32-binutils mingw32-nsiswrapper mingw64-gcc mingw64-gtk4 make pkg-config git emacs-nw gtk4-devel gcc-c++ boost boost-devel cmake file man sudo tar mingw32-gcc mingw32-gtk3 mingw32-gtk4
+RUN dnf install -y mingw64-gtk3 mingw32-binutils mingw32-nsiswrapper mingw64-gcc mingw64-gtk4 make pkg-config git emacs-nw gtk4-devel gcc-c++ boost boost-devel cmake file man sudo tar mingw32-gcc mingw32-gtk3 mingw32-gtk4 
 
 
 
@@ -62,7 +62,7 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 RUN . ~/.cargo/env && \
     rustup target add x86_64-pc-windows-gnu i686-pc-windows-gnu
 
-ADD cargo.config ~/.cargo/config
+ADD cargo.config /root/.cargo/config.toml
 
 ENV PKG_CONFIG_ALLOW_CROSS=1
 ENV PKG_CONFIG_PATH=/usr/x86_64-w64-mingw32/sys-root/mingw/lib/pkgconfig/
