@@ -9,17 +9,36 @@ MAINTAINER veto<veto@myridia.com>
 WORKDIR /root/
 RUN dnf -y update
 RUN dnf clean all
-RUN dnf install -y mingw64-gtk3 mingw32-binutils mingw32-nsiswrapper mingw64-gcc mingw64-gtk4 make pkg-config git emacs-nw gtk4-devel gcc-c++ boost boost-devel cmake file man sudo tar mingw32-gcc mingw32-gtk3 mingw32-gtk4 \
-    webkit2gtk* \
-    openssl-devel \
-    curl \
-    wget \
-    file \
-    libappindicator-gtk3-devel \
-    librsvg2-devel \
-    libsoup3* \
-    javascriptcoregtk*    
-
+RUN dnf install -y mingw64-gtk3 \
+mingw32-binutils \
+mingw32-nsiswrapper \
+mingw64-gcc \
+mingw64-gtk4 \
+mingw32-gcc \
+mingw32-gtk3 \
+mingw32-gtk4 \
+make pkg-config \
+git \
+emacs-nw \
+gtk4-devel \
+gcc-c++ \
+boost \
+boost-devel \
+cmake \
+file \
+man \
+tar \
+webkit2gtk* \
+openssl-devel \
+curl \
+wget \
+file \
+libappindicator-gtk3-devel \
+librsvg2-devel \
+libsoup3* \
+javascriptcoregtk* \
+perl 
+    
 
 
 #
@@ -69,7 +88,32 @@ RUN dnf install -y mingw64-glib2-static
 # Setup rust
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 RUN . ~/.cargo/env && \
-    rustup target add x86_64-pc-windows-gnu i686-pc-windows-gnu
+    rustup target add aarch64-apple-darwin \
+aarch64-apple-ios \
+aarch64-linux-android \
+aarch64-unknown-linux-gnu \
+arm64ec-pc-windows-msvc \
+armv7-linux-androideabi \
+i586-pc-windows-msvc \
+i586-unknown-linux-gnu \
+i686-linux-android \
+i686-pc-windows-gnu \
+i686-pc-windows-gnullvm \
+i686-pc-windows-msvc \
+i686-unknown-freebsd \
+i686-unknown-linux-gnu \
+x86_64-apple-darwin \
+x86_64-apple-ios \
+x86_64-apple-ios-macabi \
+x86_64-linux-android \
+x86_64-pc-windows-gnu  \
+x86_64-pc-windows-msvc \
+x86_64-unknown-freebsd \
+x86_64-unknown-linux-gnu \
+x86_64-unknown-linux-gnux32 \
+x86_64-unknown-netbsd \
+x86_64-unknown-redox 
+
 
 ADD cargo.config /root/.cargo/config.toml
 
