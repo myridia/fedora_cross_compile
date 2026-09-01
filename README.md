@@ -1,3 +1,5 @@
+<img src="fedora_cross_compile.svg" alt="fedora_cross_compile" width="120">
+
 # Fedora Cross Compile 
 Docker what includes many programs and libs to cross compile C and Rust application
 
